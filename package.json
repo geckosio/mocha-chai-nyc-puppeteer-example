@@ -1,0 +1,26 @@
+{
+  "name": "mocha-chai-nyc-puppeteer-example",
+  "version": "1.0.0",
+  "description": "",
+  "private": true,
+  "scripts": {
+    "test": "npm run instrument && npm run nyc && npm run clean",
+    "instrument": "nyc instrument ./src ./lib",
+    "nyc": "nyc --cache=false --reporter=cobertura --reporter=html --reporter=text mocha --timeout=25000",
+    "clean": "rimraf .nyc_output"
+  },
+  "keywords": [],
+  "author": "Yannick Deubel (https://github.com/yandeu)",
+  "license": "MIT",
+  "dependencies": {
+    "cors": "2.8.5",
+    "express": "4.16.4"
+  },
+  "devDependencies": {
+    "chai": "4.2.0",
+    "mocha": "6.1.4",
+    "mocha-headless-chrome": "2.0.2",
+    "nyc": "14.1.1",
+    "rimraf": "^2.6.3"
+  }
+}
