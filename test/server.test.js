@@ -12,7 +12,7 @@ const cors = require('cors')
 const app = express()
 const port = 3000
 
-const lib = require('../packages/server/lib.js')
+const lib = require('../packages/server')
 const { math, Hello, makeBlo, helloFromServer } = lib
 
 app.use(cors())

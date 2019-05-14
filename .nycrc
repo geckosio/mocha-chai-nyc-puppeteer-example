@@ -1,5 +1,1 @@
-{
-  "reporter": ["html", "text", "cobertura"],
-  "sourceMap": false,
-  "instrument": false
-}
+{ "sourceMap": false, "instrument": false }

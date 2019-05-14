@@ -10,7 +10,7 @@
     </script>
     <script src="../node_modules/mocha/mocha.js"></script>
     <script src="../node_modules/chai/chai.js"></script>
-    <script src="../packages/client/lib.js"></script>
+    <script src="../packages/client/index.js"></script>
   </head>
   <body>
     <div id="mocha"></div>
@@ -22,10 +22,9 @@
       const should = chai.should()
       const expect = chai.expect
 
-      const { math, Hello, sayYeah } = lib
-      const { pi, multiply } = math
+      const { sayYeah } = lib
 
-      const hello = new Hello('Yannick')
+      // const hello = new Hello('Yannick')
 
       describe('#index.test.html', () => {
         it('should be a string', () => {
@@ -36,7 +35,7 @@
           expect(sayYeah()).to.be.equal('Yeah!')
         })
 
-        it('sum should be 20', () => {
+        /*it('sum should be 20', () => {
           expect(multiply(5, 4)).to.be.equal(20)
         })
 
@@ -46,7 +45,7 @@
 
         it('should say "Yannick"', () => {
           expect(hello.sayName()).to.be.equal('My name is Yannick')
-        })
+        })*/
 
         it('should return "hello world"', async () => {
           const res = await fetch('http://localhost:3000')

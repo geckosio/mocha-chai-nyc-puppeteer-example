@@ -1,5 +1,7 @@
 class Hello {
-  constructor(public name: string) {}
+  constructor(name) {
+    this.name = name
+  }
 
   sayHello() {
     return `Hello ${this.name}`

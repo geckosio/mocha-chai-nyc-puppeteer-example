@@ -3,9 +3,9 @@ const path = require('path')
 module.exports = {
   mode: 'development',
   devtool: 'source-map',
-  entry: path.resolve(__dirname, 'lib.ts'),
+  entry: path.resolve(__dirname, 'lib.js'),
   output: {
-    filename: 'lib.js',
+    filename: 'index.js',
     path: path.resolve(__dirname),
     libraryTarget: 'commonjs',
     libraryExport: 'default'
@@ -14,27 +14,6 @@ module.exports = {
     extensions: ['.ts', '.js', '.json']
   },
   module: {
-    rules: [
-      {
-        test: /\.tsx?$/,
-        use: [
-          {
-            loader: 'babel-loader',
-            options: {
-              presets: ['@babel/preset-env'],
-              plugins: ['istanbul']
-            }
-          },
-          {
-            loader: 'babel-loader',
-            options: {
-              presets: ['@babel/preset-env', '@babel/preset-typescript'],
-              plugins: ['@babel/plugin-proposal-class-properties']
-            }
-          }
-        ],
-        exclude: /node_modules/
-      }
-    ]
+    rules: [{ test: /\.js$/, exclude: /node_modules/, loader: 'babel-loader' }]
   }
 }
