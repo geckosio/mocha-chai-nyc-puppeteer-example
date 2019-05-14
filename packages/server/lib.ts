@@ -7,4 +7,4 @@ const makeBlo = () => {
   return 'I make blo!'
 }
 
-export { math, Hello, makeBlo, helloFromServer }
+export default { math, Hello, makeBlo, helloFromServer }

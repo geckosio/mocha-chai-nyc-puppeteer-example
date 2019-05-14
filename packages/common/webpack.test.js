@@ -7,7 +7,8 @@ module.exports = {
   output: {
     filename: 'lib.js',
     path: path.resolve(__dirname),
-    libraryTarget: 'commonjs'
+    libraryTarget: 'commonjs',
+    libraryExport: 'default'
   },
   resolve: {
     extensions: ['.ts', '.js', '.json']
@@ -16,12 +17,22 @@ module.exports = {
     rules: [
       {
         test: /\.tsx?$/,
-        loader: ['babel-loader', 'ts-loader'],
-        exclude: /node_modules/
-      },
-      {
-        test: /\.js$/,
-        loader: 'babel-loader',
+        use: [
+          {
+            loader: 'babel-loader',
+            options: {
+              presets: ['@babel/preset-env'],
+              plugins: ['istanbul']
+            }
+          },
+          {
+            loader: 'babel-loader',
+            options: {
+              presets: ['@babel/preset-env', '@babel/preset-typescript'],
+              plugins: ['@babel/plugin-proposal-class-properties']
+            }
+          }
+        ],
         exclude: /node_modules/
       }
     ]

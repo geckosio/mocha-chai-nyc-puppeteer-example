@@ -1,9 +1,5 @@
 {
-  "extension": [".js"],
-  "include": ["packages/**/*.js", "packages/**/*.js.map"],
-  "exclude": ["**/*.d.ts"],
   "reporter": ["html", "text", "cobertura"],
-  "cache": false,
   "sourceMap": false,
   "instrument": false
 }
