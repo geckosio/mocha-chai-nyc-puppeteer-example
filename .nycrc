@@ -6,5 +6,6 @@
   "reporter": ["cobertura", "html", "text"],
   "exclude": ["node_modules/**"],
   "sourceMap": false,
-  "instrument": false
+  "instrument": false,
+  "all": true
 }
