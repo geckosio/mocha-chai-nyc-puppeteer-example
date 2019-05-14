@@ -4,10 +4,15 @@
   "description": "",
   "private": true,
   "scripts": {
-    "build:test": "webpack --config src/client/webpack.test.js && webpack --config src/server/webpack.test.js",
+    "bootstrap": "lerna bootstrap",
+    "postinstall": "npm run bootstrap",
+    "build:test": "npm run build:test:common && npm run build:test:client && npm run build:test:server",
+    "build:test:common": "cd packages/common && webpack --config webpack.test.js",
+    "build:test:client": "cd packages/client && webpack --config webpack.test.js",
+    "build:test:server": "cd packages/server && webpack --config webpack.test.js",
     "test": "npm run build:test && npm run nyc && npm run clean",
-    "instrument": "nyc instrument ./src/client/bundle ./src/client/test",
-    "nyc": "nyc --cache=false --reporter=cobertura --reporter=html --reporter=text mocha --timeout=25000",
+    "instrument": "nyc instrument ./packages/client/bundle ./packages/client/test",
+    "nyc": "nyc mocha --timeout=25000",
     "clean": "rimraf .nyc_output"
   },
   "keywords": [],
@@ -24,10 +29,13 @@
     "babel-loader": "^8.0.6",
     "babel-plugin-istanbul": "^5.1.4",
     "chai": "4.2.0",
+    "lerna": "^3.13.4",
     "mocha": "6.1.4",
     "mocha-headless-chrome": "2.0.2",
     "nyc": "14.1.1",
     "rimraf": "^2.6.3",
+    "ts-loader": "^6.0.0",
+    "typescript": "^3.4.5",
     "webpack": "^4.31.0",
     "webpack-cli": "^3.3.2"
   }

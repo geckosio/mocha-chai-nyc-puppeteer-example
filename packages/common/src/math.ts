@@ -18,4 +18,4 @@ const pi = () => {
   return Math.PI
 }
 
-module.exports = { sum, multiply, subtract, divide, pi }
+export default { sum, multiply, subtract, divide, pi }

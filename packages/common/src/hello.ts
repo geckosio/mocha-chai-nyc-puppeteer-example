@@ -1,7 +1,5 @@
 class Hello {
-  constructor(name) {
-    this.name = name
-  }
+  constructor(public name: string) {}
 
   sayHello() {
     return `Hello ${this.name}`
@@ -12,4 +10,4 @@ class Hello {
   }
 }
 
-module.exports = Hello
+export default Hello
