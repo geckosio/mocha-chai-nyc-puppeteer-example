@@ -12,7 +12,12 @@ const cors = require('cors')
 const app = express()
 const port = 3000
 
-const math = require('../src/math')
+const {
+  math,
+  hello,
+  makeBlo,
+  helloFromServer
+} = require('../src/server/.tmp/bundle')
 
 app.use(cors())
 
@@ -52,6 +57,14 @@ describe('#server.test.js', () => {
   })
 
   describe('#test function', () => {
+    it('should make blo', () => {
+      expect(makeBlo()).to.be.equal('I make blo!')
+    })
+
+    it('server should say goodbye', () => {
+      expect(helloFromServer(false)).to.be.equal('Server says goodbye.')
+    })
+
     it('should be a string', () => {
       'Yannick'.should.be.a('string')
     })

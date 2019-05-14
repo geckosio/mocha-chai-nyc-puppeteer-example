@@ -11,3 +11,5 @@ class Hello {
     return `My name is ${this.name}`
   }
 }
+
+module.exports = Hello

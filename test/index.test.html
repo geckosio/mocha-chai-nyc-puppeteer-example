@@ -10,9 +10,7 @@
     </script>
     <script src="../node_modules/mocha/mocha.js"></script>
     <script src="../node_modules/chai/chai.js"></script>
-    <script src="../lib/math.js"></script>
-    <script src="../lib/hello.js"></script>
-    <script src="../lib/client.js"></script>
+    <script src="../src/client/.tmp/bundle.js"></script>
   </head>
   <body>
     <div id="mocha"></div>
@@ -23,6 +21,10 @@
     <script>
       const should = chai.should()
       const expect = chai.expect
+
+      const { math, Hello, sayYeah } = lib
+      const { pi, multiply } = math
+
       const hello = new Hello('Yannick')
 
       describe('#index.test.html', () => {

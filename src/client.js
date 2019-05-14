@@ -1,3 +1,0 @@
-const sayYeah = () => {
-  return 'Yeah!'
-}

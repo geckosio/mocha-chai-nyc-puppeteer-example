@@ -2,6 +2,8 @@
 
 ## About
 
+Generates coverage report of client and server code.
+
 Exports following coverage reports:
 
 - html
