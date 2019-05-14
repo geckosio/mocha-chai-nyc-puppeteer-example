@@ -4,9 +4,9 @@
   "description": "",
   "private": true,
   "scripts": {
-    "build:test": "webpack --config src/client/webpack.test.js && webpack --config src/server/webpack.test.js",
+    "build:test": "webpack --config packages/client/webpack.test.js && webpack --config packages/server/webpack.test.js",
     "test": "npm run build:test && npm run nyc && npm run clean",
-    "instrument": "nyc instrument ./src/client/bundle ./src/client/test",
+    "instrument": "nyc instrument ./packages/client/bundle ./packages/client/test",
     "nyc": "nyc --cache=false --reporter=cobertura --reporter=html --reporter=text mocha --timeout=25000",
     "clean": "rimraf .nyc_output"
   },

@@ -17,7 +17,7 @@ const {
   hello,
   makeBlo,
   helloFromServer
-} = require('../src/server/.tmp/bundle')
+} = require('../packages/server/.tmp/bundle')
 
 app.use(cors())
 
