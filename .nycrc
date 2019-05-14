@@ -1,1 +1,10 @@
-{ "sourceMap": false, "instrument": false }
+{
+  "excludeNodeModules": false,
+  "exclude-node-modules": false,
+  "include-all-sources": true,
+  "cache": false,
+  "reporter": ["cobertura", "html", "text"],
+  "exclude": ["node_modules/**"],
+  "sourceMap": false,
+  "instrument": false
+}
